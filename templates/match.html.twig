@@ -111,6 +111,7 @@
                     <th>#</th>
                     <th>Имя</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -121,6 +122,11 @@
                         </td>
                         <td>
                             {{ player.name }}
+                        </td>
+                        <td>
+                            {% if player.goals > 0 %}
+                                <img title="Количество голов: {{ player.goals }}" src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/goal.png">
+                            {% endif %}
                         </td>
                         <td>
                             {{ player.playTime }}’
