@@ -3,6 +3,11 @@ namespace App\Entity;
 
 class Player
 {
+    public const GOALKEEPER_POSITION = 'В';
+    public const DEFENDER_POSITION = 'З';
+    public const HALFBACK_POSITION = 'П';
+    public const ATTACK_POSITION = 'Н';
+
     private const PLAY_PLAY_STATUS = 'play';
     private const BENCH_PLAY_STATUS = 'bench';
 
@@ -14,8 +19,9 @@ class Player
     private int $goals;
     private int $yellowCards;
     private bool $hasRedCard;
+    private string $position;
 
-    public function __construct(int $number, string $name)
+    public function __construct(int $number, string $name, string $position)
     {
         $this->number = $number;
         $this->name = $name;
@@ -25,6 +31,7 @@ class Player
         $this->goals = 0;
         $this->yellowCards = 0;
         $this->hasRedCard = false;
+        $this->position = $position;
     }
 
     public function getNumber(): int
@@ -101,5 +108,10 @@ class Player
     public function hasRedCard(): bool
     {
         return $this->hasRedCard;
+    }
+
+    public function getPosition(): string
+    {
+        return $this->position;
     }
 }

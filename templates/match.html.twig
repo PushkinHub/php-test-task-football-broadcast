@@ -148,5 +148,27 @@
                 </tbody>
             </table>
         </div>
+        <div class="card-body">
+            <table class="table table">
+                <thead>
+                <tr>
+                    <th>Позиция</th>
+                    <th>Общее время</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for positionName, positionTimer in team.positionTimers %}
+                    <tr>
+                        <td>
+                            {{ positionName }}
+                        </td>
+                        <td>
+                            {{ positionTimer }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endmacro %}
