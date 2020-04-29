@@ -112,6 +112,8 @@
                     <th>Имя</th>
                     <th></th>
                     <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -129,7 +131,17 @@
                             {% endif %}
                         </td>
                         <td>
-                            {{ player.playTime }}’
+                            {% if player.yellowCards > 0 %}
+                                <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if player.hasRedCard %}
+                                <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/yellow_red.png">
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ player.playTime }}
                         </td>
                     </tr>
                 {% endfor %}
